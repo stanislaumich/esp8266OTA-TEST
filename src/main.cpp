@@ -16,6 +16,8 @@ void setup() {
   Serial.begin(115200);
   Serial.println("Booting");
   WiFi.mode(WIFI_STA);
+  WiFi.config(IPAddress(192,168,0,107),IPAddress(192,168,0,1),
+              IPAddress(255,255,255,0),IPAddress(194,158,196,137));
   WiFi.begin(ssid, password);
   while (WiFi.waitForConnectResult() != WL_CONNECTED) {
     Serial.println("Connection Failed! Rebooting...");
